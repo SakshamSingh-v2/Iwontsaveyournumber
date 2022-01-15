@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} I won't save your number {% endblock title %}
+
+{% block content %}
+
+<div class="container my-5">
+    <form action="/validate">
+        <div class="form-group">
+            <input type="tel" name="phone" class="form-control form-control-lg" type="text"
+                placeholder="Phone Number with Country Code">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Send a Message</button>
+        </div>
+    </form>
+</div>
+{% if valid == '0' %}
+<div class="container my-5">
+    <div class="alert alert-warning" role="alert">
+        Invalid Number or Incorrect format, idk figure it out yourself and try again.
+    </div>
+</div>
+{% endif %}
+
+<div class="card">
+    <div class="card-body">
+      Yeah, you don't need to save the contact of every <b>person</b> you meet, just to send a <b>Whastapp Message</b>.
+    <br> Just type the Phone Number here with <b>proper country code</b> (eg. +91 000 000 0000)</div>
+</div>
+
+{% endblock content %}
